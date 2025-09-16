@@ -1,0 +1,18 @@
+services:
+  wechat-desktop:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - LC_ALL=zh_CN.UTF-8
+      - TZ=Asia/Shanghai
+      - TITLE=微信桌面
+      # Uncomment to set HTTP basic auth for the web UI
+      # - CUSTOM_USER=yourusername
+      # - PASSWORD=yourpassword
+    volumes:
+      - ./wechat_data:/config
+    ports:
+      - 3000:3000  # Web UI (VNC)
