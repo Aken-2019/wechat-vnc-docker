@@ -1,5 +1,6 @@
 services:
   wechat-desktop:
+    image: ghcr.io/aken-19/wechat-vnc-docker:latest
     build:
       context: ./
       dockerfile: Dockerfile
